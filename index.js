@@ -29,6 +29,8 @@ function translate(text, opts) {
     opts.from = languages.getCode(opts.from);
     opts.to = languages.getCode(opts.to);
 
+    opts.headers = opts.headers || {};
+
     return token.get(text, {tld: opts.tld}).then(function (token) {
         var url = 'https://translate.google.' + opts.tld + '/translate_a/single';
         var data = {
@@ -49,7 +51,9 @@ function translate(text, opts) {
 
         return url + '?' + querystring.stringify(data);
     }).then(function (url) {
-        return got(url).then(function (res) {
+        return got(url,{
+            headers:opts.headers
+        }).then(function (res) {
             var result = {
                 text: '',
                 pronunciation: '',

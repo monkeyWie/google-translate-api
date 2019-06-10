@@ -1,6 +1,6 @@
 {
-  "name": "@vitalets/google-translate-api",
-  "version": "2.8.0",
+  "name": "google-translate-api-fix",
+  "version": "0.0.1",
   "description": "A free and unlimited API for Google Translate",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/vitalets/google-translate-api.git"
+    "url": "https://github.com/monkeyWie/google-translate-api.git"
   },
   "keywords": [
     "translate",
@@ -25,15 +25,15 @@
     "language"
   ],
   "author": {
-    "name": "Matheus Fernandes",
-    "email": "npm@matheus.top",
-    "url": "http://matheus.top"
+    "name": "Li Wei",
+    "email": "liwei2633@163.com",
+    "url": "https://github.com/monkeyWie"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vitalets/google-translate-api/issues"
+    "url": "https://github.com/monkeyWie/google-translate-api/issues"
   },
-  "homepage": "https://github.com/vitalets/google-translate-api#readme",
+  "homepage": "https://github.com/monkeyWie/google-translate-api#readme",
   "dependencies": {
     "@vitalets/google-translate-token": "^1.1.0",
     "configstore": "^2.0.0",
