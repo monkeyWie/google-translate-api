@@ -1,6 +1,6 @@
 {
   "name": "google-translate-api-fix",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A free and unlimited API for Google Translate",
   "main": "index.js",
   "scripts": {
@@ -41,6 +41,7 @@
   },
   "devDependencies": {
     "ava": "^0.15.2",
+    "babel-eslint": "^10.0.1",
     "codecov": "^1.0.1",
     "coveralls": "^2.11.11",
     "nyc": "^7.0.0",
@@ -48,5 +49,8 @@
   },
   "xo": {
     "space": 4
+  },
+  "engines": {
+    "node": ">= 8.0.0"
   }
 }
