@@ -23,6 +23,7 @@ function translate(text, opts, httpOpts) {
     });
   }
 
+  opts.sl = opts.sl || "auto";
   opts.from = opts.from || "auto";
   opts.to = opts.to || "en";
   opts.tld = opts.tld || "com";
@@ -38,9 +39,9 @@ function translate(text, opts, httpOpts) {
       var url = "https://translate.google." + opts.tld + "/translate_a/single";
       var data = {
         client: opts.client || "t",
-        sl: opts.from,
+        sl: opts.sl,
         tl: opts.to,
-        hl: opts.to,
+        hl: opts.from,
         dt: ["at", "bd", "ex", "ld", "md", "qca", "rw", "rm", "ss", "t"],
         ie: "UTF-8",
         oe: "UTF-8",
