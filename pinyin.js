@@ -42,6 +42,11 @@ const token_ym = [
   "éi",
   "ěi",
   "èi",
+  "er",
+  "ēr",
+  "ér",
+  "ěr",
+  "èr",
   "ui",
   "uī",
   "uí",
@@ -273,12 +278,26 @@ function splitPy(arr) {
       if (s.length > 0) {
         let l2 = -1;
         while ((l = startWithSm(s)) != -1) {
+          const sm = s.substring(0, l);
           l2 = startWithYm(s.substring(l));
           if (l2 == -1) {
             break;
           }
-          arr.push(s.substring(0, l + l2));
-          s = s.substring(l + l2);
+          let ym = s.substring(l, l + l2);
+          //如果字符串还没解析完
+          if (s.length > sm.length + ym.length) {
+            //如果韵母最后一个拼音是声母，要判断下一个拼音是否没有声母
+            if (token_sm.includes(ym.substring(ym.length - 1))) {
+              const nextPy = s.substring(l + l2);
+              // 如果没有声母，说明这个韵母的最后一个字母是下一个拼音的声母
+              if (startWithSm(nextPy) == -1) {
+                ym = ym.substring(0, ym.length - 1);
+              }
+            }
+          }
+          const py = sm + ym;
+          arr.push(py);
+          s = s.substring(py.length);
         }
       }
       return arr;
